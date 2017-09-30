@@ -7,7 +7,7 @@ Writing mapboxGL styles by hand is a pain, and Maputnik makes it easy to experim
 ### Why not use maputnik-cli?  
 Maputnik CLI wants a file on the local filesystem as an input.  If you're doing a lot of `addSource()` and `addLayer()` in your project and have your configs spread out, you may not have a consolidated style JSON to pass into maputnik-cli.  Our approach grabs the current style from an already loaded map, and doesn't concern itself with how the map was initialized.
 
-## Workdlow
+## Workflow
 
 The express server hosts the maputnik editor at `localhost:4000/maputnik`, as well as a simple API for receiving and serving a mapboxGL style JSON. The indended workflow is as follows:
 
