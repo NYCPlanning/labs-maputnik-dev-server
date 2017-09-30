@@ -47,9 +47,11 @@ openMaputnik() {
   npm install
   ```
 
-2. Download and Build Maputnik into `/public`
+2. Download and Build Maputnik into `/public` (runs `scripts/build-maputnik.sh`)
 
+  ```
   npm run build-maputnik
+  ```
 
 3. Start the server
   ```
@@ -58,15 +60,6 @@ openMaputnik() {
 
 ## Routes
 
-- `POST` `/style` - gets results that match a string passed in as query parameter `q`
-- `GET` `/style` - gets results that match a string passed in as query parameter `q`
+- `POST /style` - submit a style JSON that will be immediately available using `GET /style`
+- `GET /style` - 'GET' the last style that was `POST`ed
 
-## Types of results
-
-Results in will be JSON objects and will be one of the following types:
-
-`address` - Mapzen Search geocoder results that matched the
-
-`lot` - A PLUTO tax lot that matched either on `bbl` or `address`
-
-`zma` - A zoning amendment that matched either on `ulurpno` or `project_na`
