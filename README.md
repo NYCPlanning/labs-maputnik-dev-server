@@ -48,7 +48,8 @@ fetch('http://localhost:4000/style',{method:'POST',headers:{Accept:'application/
 
 1. Clone this repo & install dependencies
   ```
-  git clone https://github.com/NYCPlanning/labs-zola-search-api.git
+  git clone git@github.com:NYCPlanning/labs-maputnik-dev-server.git
+  cd labs-maputnik-dev-server
   npm install
   ```
 
@@ -67,4 +68,3 @@ fetch('http://localhost:4000/style',{method:'POST',headers:{Accept:'application/
 
 - `POST /style` - submit a style JSON that will be immediately available using `GET /style`
 - `GET /style` - 'GET' the last style that was `POST`ed
-
