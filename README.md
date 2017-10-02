@@ -60,14 +60,15 @@ It is also possible to send the current map JSON to `maputnik-dev-server` from t
   ```
   npm run start
   ```
-  
- You can use Maputnik to style your layers, then copy and paste the layer config JSON back into your application.  The valid JSON throws off our linter, so we like using `[linter-eslint](https://atom.io/packages/linter-eslint)` to format everything once we paste the JSON into our code.
 
 4. Paste the following command in to the JavaScript console
 ```
 fetch('http://localhost:4000/style',{method:'POST',headers:{Accept:'application/json','Content-Type': 'application/json'},body: JSON.stringify(map.getStyle())}).then(()=>{window.open(`http://localhost:4000/?style=http://localhost:4000/style#${map.getZoom()}/${map.getCenter().lat}/${map.getCenter().lng}`,'_blank');});
 ```
 
+5. Style layers in Maputnik, copy and paste the resulting layer configs into your code.
+
+The valid JSON throws off our linter, so we like using `[linter-eslint](https://atom.io/packages/linter-eslint)` to format everything once we paste the JSON into our code.
 
 ## Routes
 
