@@ -39,16 +39,14 @@ openMaputnik() {
 },
 ```  
 
-It is also possible to send the current map JSON to `maputnik-dev-server` from the javascript console, as long as the `map` object is available globally.  Just paste the following command in to the javascript console:
-```
-fetch('http://localhost:4000/style',{method:'POST',headers:{Accept:'application/json','Content-Type': 'application/json'},body: JSON.stringify(map.getStyle())}).then(()=>{window.open(`http://localhost:4000/?style=http://localhost:4000/style#${map.getZoom()}/${map.getCenter().lat}/${map.getCenter().lng}`,'_blank');});
-```
+It is also possible to send the current map JSON to `maputnik-dev-server` from the JavaScript console, as long as the `map` object is available globally.  See step 4 below.
 
 ## How to Use
 
 1. Clone this repo & install dependencies
   ```
-  git clone https://github.com/NYCPlanning/labs-zola-search-api.git
+  git clone git@github.com:NYCPlanning/labs-maputnik-dev-server.git
+  cd labs-maputnik-dev-server
   npm install
   ```
 
@@ -60,13 +58,18 @@ fetch('http://localhost:4000/style',{method:'POST',headers:{Accept:'application/
 
 3. Start the server
   ```
-  npm run devstart
+  npm run start
   ```
   
  You can use Maputnik to style your layers, then copy and paste the layer config JSON back into your application.  The valid JSON throws off our linter, so we like using `[linter-eslint](https://atom.io/packages/linter-eslint)` to format everything once we paste the JSON into our code.
+
+4. Paste the following command in to the JavaScript console
+```
+fetch('http://localhost:4000/style',{method:'POST',headers:{Accept:'application/json','Content-Type': 'application/json'},body: JSON.stringify(map.getStyle())}).then(()=>{window.open(`http://localhost:4000/?style=http://localhost:4000/style#${map.getZoom()}/${map.getCenter().lat}/${map.getCenter().lng}`,'_blank');});
+```
+
 
 ## Routes
 
 - `POST /style` - submit a style JSON that will be immediately available using `GET /style`
 - `GET /style` - 'GET' the last style that was `POST`ed
-
