@@ -41,7 +41,7 @@ openMaputnik() {
 
 It is also possible to send the current map JSON to `maputnik-dev-server` from the javascript console, as long as the `map` object is available globally.  Just paste the following command in to the javascript console:
 ```
-fetch('http://localhost:4000/style', {method: 'POST',headers: {Accept: 'application/json','Content-Type': 'application/json'},body: JSON.stringify(map.getStyle())}).then(()=>{window.open(`http://localhost:4000/?style=http://localhost:4000/style#${map.getZoom()}/${map.getCenter().lat}/${map.getCenter().lng}`, '_blank');});
+fetch('http://localhost:4000/style',{method:'POST',headers:{Accept:'application/json','Content-Type': 'application/json'},body: JSON.stringify(map.getStyle())}).then(()=>{window.open(`http://localhost:4000/?style=http://localhost:4000/style#${map.getZoom()}/${map.getCenter().lat}/${map.getCenter().lng}`,'_blank');});
 ```
 
 ## How to Use
