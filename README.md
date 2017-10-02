@@ -62,6 +62,8 @@ fetch('http://localhost:4000/style',{method:'POST',headers:{Accept:'application/
   ```
   npm run devstart
   ```
+  
+ You can use Maputnik to style your layers, then copy and paste the layer config JSON back into your application.  The valid JSON throws off our linter, so we like using `[linter-eslint](https://atom.io/packages/linter-eslint)` to format everything once we paste the JSON into our code.
 
 ## Routes
 
