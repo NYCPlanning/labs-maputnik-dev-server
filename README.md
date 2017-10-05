@@ -1,5 +1,5 @@
 # maputnik-dev-server
-An express.js server that allows for quickly loading mapboxGL styles from any project into the Maputnik Style Editor
+An express.js server that allows for quickly loading mapboxGL styles from any project into the [Maputnik Style Editor](https://github.com/maputnik/editor)
 
 ## Overview
 Writing mapboxGL styles by hand is a pain, and Maputnik makes it easy to experiment with different styles via a GUI.  However, manually loading sources and layers into Maputnik is cumbersome.  Since Maputnik takes a `style` query param, it's possible to pass in a complete mapboxGL style.  `maputnik-dev-server` provides a simple way to load the current style from a mapboxGL map in a development environment into Maputnik.
