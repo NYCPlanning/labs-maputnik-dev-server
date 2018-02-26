@@ -15,7 +15,7 @@ router.post('/style', (req, res) => {
 });
 
 router.get('/style', (req, res) => {
-  res.send(JSON.stringify(style));
+  res.json(style);
   console.log('GET')
 });
 
